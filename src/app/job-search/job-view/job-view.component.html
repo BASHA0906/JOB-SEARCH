@@ -1,0 +1,36 @@
+<div class="container">
+  <ng-container>
+    <button (click)="goback()">Back</button>
+
+    <div class="row">
+      <div class="job-view-content">
+        <div class="img-view">
+          <img class="img" [src]="jobData?.companyLogo" alt="Logo" />
+
+          <div class="img-view-content">
+            <h3>{{ jobData?.companyName }}-{{ jobData?.title }}</h3>
+            <span
+              ><button>{{ jobData?.industries }}</button></span
+            >
+            <span
+              ><button>{{ jobData?.types }}</button></span
+            >
+          </div>
+        </div>
+
+        <p>
+          <span>Published Date:</span
+          >{{ jobData?.publishDate | date : "M/d/yyyy" }}
+        </p>
+        <p>
+          <span>Location: {{ jobData?.location }}</span>
+        </p>
+        <p>
+          <span>Reference: {{ jobData?.reference }}</span>
+        </p>
+        <p>Description:</p>
+        <p [innerHTML]="jobData?.description"></p>
+      </div>
+    </div>
+  </ng-container>
+</div>

@@ -1,0 +1,25 @@
+.container {
+    width: 60%;
+}
+
+.img {
+    flex: 1%;
+    margin-right: 15px;
+}
+
+.content {
+    flex: 80%;
+}
+
+.job-desc {
+    padding-right: 25px;
+    margin-right: 10px;
+}
+
+.favourite-job {
+    padding: 10px;
+}
+
+.active {
+    color: yellow;
+}
