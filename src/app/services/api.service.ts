@@ -13,11 +13,20 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   public static get favoriteData(): Job[] {
+    const local = localStorage.getItem('fav');
+    if(local){
+      ApiService._favoriteData = JSON.parse(local);
+      return ApiService._favoriteData;
+    }
     return ApiService._favoriteData;
   }
 
   public static set favoriteData(data: Job[]) {
-    ApiService._favoriteData = data;
+    localStorage.setItem('fav', JSON.stringify(data));
+    const loaf = localStorage.getItem('fav');
+    if(loaf){
+      ApiService._favoriteData = JSON.parse(loaf);
+    }
   }
 
   getAllJobs(): Observable<Job[]> {
